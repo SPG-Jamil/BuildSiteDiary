@@ -1,0 +1,92 @@
+﻿.app-header {
+    background-color: #1699dd;
+}
+
+.app-licensed-to {
+    color: #373737;
+}
+
+.app-licensee-name {
+    color: #0ba3dc;
+}
+
+.app-user-name {
+    color: #0ba3dc;
+}
+
+.no-padd-hover {
+    background-color: #1699dd !important;
+}
+
+.app-menu-tile {
+    border: 3px solid #108ccc;
+    -webkit-box-shadow: 0 4px 9px rgba(0, 0, 0, 0.19), 0 1px 4px rgba(0, 0, 0, 0.23);
+    -ms-box-shadow: 0 4px 9px rgba(0, 0, 0, 0.19), 0 1px 4px rgba(0, 0, 0, 0.23);
+    box-shadow: 0 4px 9px rgba(0, 0, 0, 0.19), 0 1px 4px rgba(0, 0, 0, 0.23);
+    outline: none;
+}
+
+.app-menu-small-description {
+    color: #505652;
+}
+
+.modal-card {
+    border: 2px solid #656464;
+    -webkit-box-shadow: 0 4px 9px rgba(0, 0, 0, 0.19), 0 1px 4px rgba(0, 0, 0, 0.23);
+    -ms-box-shadow: 0 4px 9px rgba(0, 0, 0, 0.19), 0 1px 4px rgba(0, 0, 0, 0.23);
+    box-shadow: 0 4px 9px rgba(0, 0, 0, 0.19), 0 1px 4px rgba(0, 0, 0, 0.23);
+    outline: none;
+}
+
+.app-btn-blue {
+    background: #1699dd;
+}
+
+.form-control {
+    border-color: #b8bdc4;
+}
+
+.app-page-heading {
+    color: #26a5e6;
+}
+
+.app-page-sub-heading {
+    color: rgb(66, 66, 66);
+}
+
+.app-tab-blue.nav-tabs.nav-justified > .active > a, .app-tab-blue.nav-tabs.nav-justified > .active > a:focus, .app-tab-blue.nav-tabs.nav-justified > .active > a:hover {
+    background: #1699dd;
+    border: 1px solid #1699dd;
+}
+
+.app-data-field:focus {
+    border-color: black;
+}
+
+.app-blue-button {
+    background: #1699dd;
+    color: white;
+    border-color: #1699dd;
+}
+
+.app-transparent-blue-button {
+    background: #1699dd;
+    color: white;
+    border-color: #1699dd;
+}
+
+
+.app-menu-description {
+    color: #0b6c9e;
+}
+
+.modal-card-footer {
+    color: #393950;
+}
+
+.app-body {
+    border: none;
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    -ms-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}

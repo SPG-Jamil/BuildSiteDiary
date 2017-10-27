@@ -1,0 +1,215 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<!-- 
+  IMPORTANT NOTES FOR THIS FILE:
+  TO PUT LINE BREAK IN MESSAGE USE : [LB]
+  TO MAKE BOLD HEADING IN MESSAGE USE : @[ XXX ]@
+-->
+
+<Email>
+
+  <English>
+    <NewUserActivationEmailForFirstTimePasswordGeneration>
+      <Subject></Subject>
+      <Message></Message>
+    </NewUserActivationEmailForFirstTimePasswordGeneration>
+
+    <UserNameChangedByAdministrator>
+      <Subject></Subject>
+      <Message></Message>
+    </UserNameChangedByAdministrator>
+
+    <EmailChangedByAdministrator>
+      <Subject></Subject>
+      <Message></Message>
+    </EmailChangedByAdministrator>
+
+    <UserNameAndEmailChangedByAdministrator>
+      <Subject></Subject>
+      <Message></Message>
+    </UserNameAndEmailChangedByAdministrator>
+
+    <UserForgotHisPasswordAndEnteredRecoveryEmail>
+      <Subject>FORGOT YOUR PASSWORD</Subject>
+      <Message>
+        Hi there,[LB]
+        Your new password generation request id is: @guid [LB]Please click the following link to reset your account password.[LB]
+        @link [LB][LB]
+        Thanks
+      </Message>
+    </UserForgotHisPasswordAndEnteredRecoveryEmail>
+
+    <UserForgotHisUserNameAndEnteredRecoveryEmail>
+      <Subject>YOUR BSD USERNAME</Subject>
+      <Message>
+        Hi there,[LB]
+        Your username for Build Site Diary is : @userName [LB][LB] 
+        Thanks
+      </Message>
+    </UserForgotHisUserNameAndEnteredRecoveryEmail>
+
+    <UserInActivatedByAdministrator>
+      <Subject></Subject>
+      <Message></Message>
+    </UserInActivatedByAdministrator>
+
+    <AdditionalWorkIsAddedOnProject>
+      <Subject></Subject>
+      <Message></Message>
+    </AdditionalWorkIsAddedOnProject>
+
+    <ConcernWorkIsAddedOnProject>
+      <Subject></Subject>
+      <Message></Message>
+    </ConcernWorkIsAddedOnProject>
+
+    <ProjectInvoiceByEmail>
+      <Subject></Subject>
+      <Message></Message>
+    </ProjectInvoiceByEmail>
+
+    <ResourcesIntimationEmailToWorkOnProject>
+      <Subject></Subject>
+      <Message></Message>
+    </ResourcesIntimationEmailToWorkOnProject>
+
+    <NewExceptionOccured>
+      <Subject></Subject>
+      <Message></Message>
+    </NewExceptionOccured>
+
+    <NewLicenseeSubscribed>
+      <Subject></Subject>
+      <Message></Message>
+    </NewLicenseeSubscribed>
+
+    <ActivityNowInPositionToBeInspectedOrCertified>
+      <Subject></Subject>
+      <Message></Message>
+    </ActivityNowInPositionToBeInspectedOrCertified>
+
+    <ActivityInspectedSuccess>
+      <Subject></Subject>
+      <Message></Message>
+    </ActivityInspectedSuccess>
+
+    <ForgotPasswordChangedSuccess>
+      <Subject></Subject>
+      <Message></Message>
+    </ForgotPasswordChangedSuccess>
+
+    <ExceptionOccured>
+      <Subject>EXCEPTION OCCURED</Subject>
+      <Message>
+        Dear Vendor,
+        An exception just occured with the following details: [LB]
+        @[Message]@: @Message [LB]
+        @[StackTrace]@: @Stack [LB]
+        @[URL]@: @Url [LB]
+        @[DateTime]@: @Date [LB]
+        Thanks.
+      </Message>
+    </ExceptionOccured>
+  </English>
+
+  <Germany>
+    <NewUserActivationEmailForFirstTimePasswordGeneration>
+      <Subject></Subject>
+      <Message></Message>
+    </NewUserActivationEmailForFirstTimePasswordGeneration>
+
+    <UserNameChangedByAdministrator>
+      <Subject></Subject>
+      <Message></Message>
+    </UserNameChangedByAdministrator>
+
+    <EmailChangedByAdministrator>
+      <Subject></Subject>
+      <Message></Message>
+    </EmailChangedByAdministrator>
+
+    <UserNameAndEmailChangedByAdministrator>
+      <Subject></Subject>
+      <Message></Message>
+    </UserNameAndEmailChangedByAdministrator>
+
+    <UserForgotHisPasswordAndEnteredRecoveryEmail>
+      <Subject>FORGOT YOUR PASSWORD</Subject>
+      <Message>
+        Hi there,[LB]
+        Please click the following link to reset your account password.[LB]
+        @link [LB][LB]
+        Thanks
+      </Message>
+    </UserForgotHisPasswordAndEnteredRecoveryEmail>
+
+    <UserForgotHisUserNameAndEnteredRecoveryEmail>
+      <Subject></Subject>
+      <Message></Message>
+    </UserForgotHisUserNameAndEnteredRecoveryEmail>
+
+    <UserInActivatedByAdministrator>
+      <Subject></Subject>
+      <Message></Message>
+    </UserInActivatedByAdministrator>
+
+    <AdditionalWorkIsAddedOnProject>
+      <Subject></Subject>
+      <Message></Message>
+    </AdditionalWorkIsAddedOnProject>
+
+    <ConcernWorkIsAddedOnProject>
+      <Subject></Subject>
+      <Message></Message>
+    </ConcernWorkIsAddedOnProject>
+
+    <ProjectInvoiceByEmail>
+      <Subject></Subject>
+      <Message></Message>
+    </ProjectInvoiceByEmail>
+
+    <ResourcesIntimationEmailToWorkOnProject>
+      <Subject></Subject>
+      <Message></Message>
+    </ResourcesIntimationEmailToWorkOnProject>
+
+    <NewExceptionOccured>
+      <Subject></Subject>
+      <Message></Message>
+    </NewExceptionOccured>
+
+    <NewLicenseeSubscribed>
+      <Subject></Subject>
+      <Message></Message>
+    </NewLicenseeSubscribed>
+
+    <ActivityNowInPositionToBeInspectedOrCertified>
+      <Subject></Subject>
+      <Message></Message>
+    </ActivityNowInPositionToBeInspectedOrCertified>
+
+    <ActivityInspectedSuccess>
+      <Subject></Subject>
+      <Message></Message>
+    </ActivityInspectedSuccess>
+
+    <ForgotPasswordChangedSuccess>
+      <Subject></Subject>
+      <Message></Message>
+    </ForgotPasswordChangedSuccess>
+
+    <ExceptionOccured>
+      <Subject>EXCEPTION OCCURED</Subject>
+      <Message>
+        Dear Vendor,
+        An exception just occured with the following details: [LB]
+        @[Message]@: @Message [LB]
+        @[StackTrace]@: @Stack [LB]
+        @[URL]@: @Url [LB]
+        @[DateTime]@: @Date [LB]
+        Thanks.
+      </Message>
+    </ExceptionOccured>
+  </Germany>
+
+</Email>

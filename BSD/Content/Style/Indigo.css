@@ -1,0 +1,173 @@
+﻿.app-header {
+    background-color: rgb(116,62,160);
+}
+
+.app-licensed-to {
+    color: rgb(116,62,160);
+}
+
+.app-licensee-name {
+    color: rgb(116,62,160);
+}
+
+.app-user-name {
+    color: rgb(116,62,160);
+}
+
+.no-padd-hover {
+    background-color: rgb(116,62,160) !important;
+}
+
+.app-menu-tile {
+    border: 2px solid rgb(116,62,160);
+    -webkit-box-shadow: 0 4px 9px rgba(0, 0, 0, 0.19), 0 1px 4px rgba(0, 0, 0, 0.23);
+    -ms-box-shadow: 0 4px 9px rgba(0, 0, 0, 0.19), 0 1px 4px rgba(0, 0, 0, 0.23);
+    box-shadow: 0 4px 9px rgba(0, 0, 0, 0.19), 0 1px 4px rgba(0, 0, 0, 0.23);
+    outline: none;
+}
+
+.app-menu-small-description {
+    color: #5e5e5e;
+}
+
+.modal-card {
+    border: 2px solid rgb(116,62,160);
+    outline: none;
+}
+
+.app-btn-blue {
+    background: rgb(116,62,160);
+}
+
+.form-control {
+    border-color: rgb(116,62,160);
+}
+
+.app-page-heading {
+    color: rgb(116,62,160);
+}
+
+
+
+.app-tab-blue.nav-tabs.nav-justified > .active > a, .app-tab-blue.nav-tabs.nav-justified > .active > a:focus, .app-tab-blue.nav-tabs.nav-justified > .active > a:hover {
+    background: rgb(116,62,160);
+    border: 1px solid rgb(116,62,160);
+}
+
+.app-data-field:focus {
+    border-color: rgb(116,62,160);
+}
+
+.app-blue-button {
+    background: rgb(116,62,160);
+    color: white;
+    border-color: rgb(116,62,160);
+}
+
+.app-transparent-blue-button {
+    background: rgb(116,62,160);
+    color: white;
+    border-color: rgb(116,62,160);
+}
+
+.app-menu-description {
+    color: rgb(116,62,160);
+}
+
+.modal-card-footer {
+    color: rgb(116,62,160);
+}
+
+.app-body {
+    border: none;
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    -ms-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+
+.app-navigation-ul li:hover {
+    background: #7b28b7;
+}
+
+
+.modal-card:hover .modal-card-footer, .modal-card:hover .modal-card-heading, .modal-card:hover a {
+    color: rgb(116,62,160);
+    text-decoration: none !important;
+}
+
+.modal-card:hover {
+    border: 2px solid rgb(116,62,160);
+    cursor: pointer;
+    text-decoration: none !important;
+}
+
+.modal .col-md-12 h2:hover {
+    color: rgb(116,62,160) !important;
+}
+
+.modal .parentcard:hover h2 {
+    color: rgb(116,62,160) !important;
+}
+
+
+::-webkit-scrollbar-track {
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgb(116,62,160);
+}
+
+.custompaging a {
+    background-color: #fff;
+    border: 1px solid #743ea0;
+    color: indigo;
+    line-height: 1.428571429;
+    padding: 6px 12px;
+    text-decoration: none;
+    margin-top: 10px;
+    display: inline-block;
+    margin-right: 2px;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s linear;
+    -ms-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+}
+
+.custompaging a:hover {
+        background-color: #743ea0;
+        border: 1px solid #743ea0;
+        color: #fff !important;
+        line-height: 1.428571429;
+        padding: 6px 12px;
+    }
+
+.custompaging span {
+    background-color: #743ea0;
+    border: 1px solid #743ea0;
+    color: #fff;
+    line-height: 1.428571429;
+    padding: 6px 12px;
+    margin-top: 10px;
+    display: inline-block;  margin-right: 2px;
+}
+
+tr.custompaging {
+    background: none !important;
+    height: 50px;
+}
+
+    tr.custompaging tr {
+        background: none !important;
+    }
+
+    tr.custompaging td {
+        border: 0;
+    }

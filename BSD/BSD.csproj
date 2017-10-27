@@ -1,0 +1,959 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.2.4.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.4.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6BD78507-9CC5-4D98-8888-651883FE315B}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BSD</RootNamespace>
+    <AssemblyName>BSD</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=17.1.1.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <HintPath>..\packages\AjaxControlToolkit.17.1.1.0\lib\net40\AjaxControlToolkit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ClosedXML, Version=0.89.0.0, Culture=neutral, PublicKeyToken=fd1eb21b62ae805b, processorArchitecture=MSIL">
+      <HintPath>..\packages\ClosedXML.0.89.0\lib\net452\ClosedXML.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.7.2.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.2.7.2\lib\net40\DocumentFormat.OpenXml.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FastMember.Signed, Version=1.0.0.9, Culture=neutral, PublicKeyToken=9e8f22703bef9a29, processorArchitecture=MSIL">
+      <HintPath>..\packages\FastMember.Signed.1.1.0\lib\net40\FastMember.Signed.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.12.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.12\lib\itextsharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AccountActivation.aspx" />
+    <Content Include="ActivitiesByPhases.aspx" />
+    <Content Include="App_Data\DatabaseQueries.xml" />
+    <Content Include="App_Data\EmailTemplates.xml" />
+    <Content Include="Attachments.aspx" />
+    <Content Include="BillingStages.aspx" />
+    <Content Include="Builder.aspx" />
+    <Content Include="BuildingInspector.aspx" />
+    <Content Include="BuildingOwner.aspx" />
+    <Content Include="BuildingSurveyor.aspx" />
+    <Content Include="BusinessSubCategories.aspx" />
+    <Content Include="ConstructionCategory.aspx" />
+    <Content Include="ConstructionManPower.aspx" />
+    <Content Include="ConstructionPhases.aspx" />
+    <Content Include="Consultant.aspx" />
+    <Content Include="Content\Image\Back.png" />
+    <Content Include="Content\Image\BackToHome.png" />
+    <Content Include="Content\Image\bg.jpg" />
+    <Content Include="Content\Image\Delete.png" />
+    <Content Include="Content\Image\Edit.png" />
+    <Content Include="Content\Image\ImageDummy.png" />
+    <Content Include="Content\Image\Info.png" />
+    <Content Include="Content\Image\purple%402x.png" />
+    <Content Include="Content\Image\purple.png" />
+    <Content Include="Content\Image\RemoveSmall.png" />
+    <Content Include="Content\Image\UploadSmall.png" />
+    <Content Include="Content\Style\ChildPages.css" />
+    <Content Include="Content\Style\Indigo.css" />
+    <Content Include="Content\Style\notify.css" />
+    <Content Include="Content\Style\Pace2.css" />
+    <Content Include="Content\Style\prettify.css" />
+    <Content Include="Content\Style\purple.css" />
+    <Content Include="Content\Style\SkyBlue.css" />
+    <Content Include="Contractor.aspx" />
+    <Content Include="DailyLog.aspx" />
+    <Content Include="DaySiteActivities.aspx" />
+    <Content Include="Developer.aspx" />
+    <Content Include="FinancialInstitution.aspx" />
+    <Content Include="ForgotYourPassword.aspx" />
+    <Content Include="GSTRate.aspx" />
+    <Content Include="HandoverWalkThrough.aspx" />
+    <Content Include="InspectionAndCertification.aspx" />
+    <Content Include="KeepSessionAlive.aspx" />
+    <Content Include="LangInsertion.aspx" />
+    <Content Include="LicenseeProfile.aspx" />
+    <Content Include="LicenseRegistration.aspx" />
+    <Content Include="LicensingCompletion.aspx" />
+    <Content Include="Login.aspx" />
+    <Content Include="NoJS.html" />
+    <Content Include="NotAllowed.aspx" />
+    <Content Include="OfficeTitles.aspx" />
+    <Content Include="packages.config" />
+    <Content Include="BSDMaster.Master" />
+    <Content Include="PreviousDailyLog.aspx" />
+    <Content Include="PrivateCertifier.aspx" />
+    <Content Include="ProcessCompletion.aspx" />
+    <Content Include="ProjectByLocation.aspx" />
+    <Content Include="ProjectDetail.aspx" />
+    <Content Include="ProjectHeader.aspx" />
+    <Content Include="ProjectProgressAndContractorInvoice.aspx" />
+    <Content Include="QuantitySurveyor.aspx" />
+    <Content Include="Report.aspx" />
+    <Content Include="Scripts\bootstrap-timepicker.min.js" />
+    <Content Include="Scripts\CopyToBoard.js" />
+    <Content Include="Scripts\DailyLog.js" />
+    <Content Include="Scripts\icheck.min.js" />
+    <Content Include="Scripts\jquery-3.2.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.2.1.min.map" />
+    <Content Include="Scripts\Master.js" />
+    <Content Include="user_images\dailyConcerns\Calender.jpg" />
+    <Content Include="WHSCheckList.aspx" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Application_Folders\IAC_Media\1\Four Seasons\1_4_20_1_20_Certification_Four Seasons_1.jpg" />
+    <Content Include="Application_Folders\IAC_Media\1\Four Seasons\1_4_21_1_20_Certification_Four Seasons_1.jpg" />
+    <Content Include="Application_Folders\IAC_Media\1\Four Seasons\1_5_24_1_20_Certification_Four Seasons_1.jpg" />
+    <Content Include="Application_Folders\IAC_Media\1\Four Seasons\1_5_24_1_21_Inspection_Four Seasons_1.jpg" />
+    <Content Include="Application_Folders\IAC_Media\1\Four Seasons\1_6_26_1_21_Inspection_Four Seasons_1.jpg" />
+    <Content Include="bin\AjaxControlToolkit.dll" />
+    <Content Include="bin\ClosedXML.dll" />
+    <Content Include="bin\DocumentFormat.OpenXml.dll" />
+    <Content Include="bin\FastMember.Signed.dll" />
+    <Content Include="bin\itextsharp.dll" />
+    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
+    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml" />
+    <Content Include="Content\Fixer.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\Image\ACTBY.jpg" />
+    <Content Include="Content\Image\actbyphs_.jpg" />
+    <Content Include="Content\Image\adwrkr_.jpg" />
+    <Content Include="Content\Image\attach_.jpg" />
+    <Content Include="Content\Image\aust.png" />
+    <Content Include="Content\Image\BInsp.jpg" />
+    <Content Include="Content\Image\bldinsp_.jpg" />
+    <Content Include="Content\Image\bldr_.jpg" />
+    <Content Include="Content\Image\bldsurv_.jpg" />
+    <Content Include="Content\Image\BPR.jpg" />
+    <Content Include="Content\Image\BSD-Login.jpg" />
+    <Content Include="Content\Image\bsdWhite.png" />
+    <Content Include="Content\Image\bsnssubcateg_.jpg" />
+    <Content Include="Content\Image\BSTAG.jpg" />
+    <Content Include="Content\Image\Bsur.jpg" />
+    <Content Include="Content\Image\Bui.jpg" />
+    <Content Include="Content\Image\ccateg_.jpg" />
+    <Content Include="Content\Image\checklist_.jpg" />
+    <Content Include="Content\Image\cncrn_.jpg" />
+    <Content Include="Content\Image\cntrcrinvoice_.jpg" />
+    <Content Include="Content\Image\cntrcr_.jpg" />
+    <Content Include="Content\Image\conclt_.jpg" />
+    <Content Include="Content\Image\Cons.jpg" />
+    <Content Include="Content\Image\CONSMANP.jpg" />
+    <Content Include="Content\Image\Cont.jpg" />
+    <Content Include="Content\Image\Contact.png" />
+    <Content Include="Content\Image\Contract.png" />
+    <Content Include="Content\Image\CP.jpg" />
+    <Content Include="Content\Image\cto.jpg" />
+    <Content Include="Content\Image\DAS.png" />
+    <Content Include="Content\Image\Dev.jpg" />
+    <Content Include="Content\Image\devp_.png" />
+    <Content Include="Content\Image\DLOG_.jpg" />
+    <Content Include="Content\Image\dlr_.jpg" />
+    <Content Include="Content\Image\Drawing.png" />
+    <Content Include="Content\Image\DSA.png" />
+    <Content Include="Content\Image\Exit.png" />
+    <Content Include="Content\Image\fininst_.png" />
+    <Content Include="Content\Image\germ.png" />
+    <Content Include="Content\Image\gst_.jpg" />
+    <Content Include="Content\Image\handover_.jpg" />
+    <Content Include="Content\Image\IFFI.png" />
+    <Content Include="Content\Image\IFPO.png" />
+    <Content Include="Content\Image\IFRB.png" />
+    <Content Include="Content\Image\inspandcertr_.jpg" />
+    <Content Include="Content\Image\inspandcert_.jpg" />
+    <Content Include="Content\Image\Invoices.png" />
+    <Content Include="Content\Image\LP.png" />
+    <Content Include="Content\Image\lp_.jpg" />
+    <Content Include="Content\Image\MISCPARAM.jpg" />
+    <Content Include="Content\Image\MNGQL.jpg" />
+    <Content Include="Content\Image\MyBg.jpg" />
+    <Content Include="Content\Image\noAccess.jpg" />
+    <Content Include="Content\Image\Notification.png" />
+    <Content Include="Content\Image\OffTit.jpg" />
+    <Content Include="Content\Image\OFFTITLE.jpg" />
+    <Content Include="Content\Image\PCert.jpg" />
+    <Content Include="Content\Image\PCert.png" />
+    <Content Include="Content\Image\pcertfr_.jpg" />
+    <Content Include="Content\Image\PD.jpg" />
+    <Content Include="Content\Image\pdlog_.jpg" />
+    <Content Include="Content\Image\phasesinspect_.jpg" />
+    <Content Include="Content\Image\PHEA.jpg" />
+    <Content Include="Content\Image\Previous.png" />
+    <Content Include="Content\Image\prjblngplan_.jpg" />
+    <Content Include="Content\Image\prjexecstat.jpg" />
+    <Content Include="Content\Image\prjexectime_.jpg" />
+    <Content Include="Content\Image\prjlist_.jpg" />
+    <Content Include="Content\Image\prjphoto_.jpg" />
+    <Content Include="Content\Image\prjplantimebar_.jpg" />
+    <Content Include="Content\Image\prjplantsk_.jpg" />
+    <Content Include="Content\Image\prjprgrsvinc_.jpg" />
+    <Content Include="Content\Image\QA.png" />
+    <Content Include="Content\Image\QtySrv.jpg" />
+    <Content Include="Content\Image\QtySrv.png" />
+    <Content Include="Content\Image\qtysury_.jpg" />
+    <Content Include="Content\Image\REP.png" />
+    <Content Include="Content\Image\SDS.png" />
+    <Content Include="Content\Image\SelPrj.png" />
+    <Content Include="Content\Image\SelUser.png" />
+    <Content Include="Content\Image\smsandemail_.jpg" />
+    <Content Include="Content\Image\stndrd_.jpg" />
+    <Content Include="Content\Image\Sup.jpg" />
+    <Content Include="Content\Image\supp_.jpg" />
+    <Content Include="Content\Image\SYSACC.jpg" />
+    <Content Include="Content\Image\touch.png" />
+    <Content Include="Content\Image\Truck.png" />
+    <Content Include="Content\Image\YPBL.png" />
+    <Content Include="Content\Image\YPIP.png" />
+    <Content Include="Content\Style\Bootstrap\bootstrap-theme.css" />
+    <Content Include="Content\Style\Bootstrap\bootstrap-theme.min.css" />
+    <Content Include="Content\Style\Bootstrap\bootstrap-timepicker.min.css" />
+    <Content Include="Content\Style\Bootstrap\bootstrap.css" />
+    <Content Include="Content\Style\Bootstrap\bootstrap.min.css" />
+    <Content Include="Content\Style\Master.css" />
+    <Content Include="Content\Style\Select2\select2.css" />
+    <Content Include="Content\Style\Select2\select2.min.css" />
+    <Content Include="Content\Style\TimePicker\bootstrap-timepicker.min.css" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="RoadMap.aspx" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\Style\Bootstrap\bootstrap-theme.css.map" />
+    <Content Include="Content\Style\Bootstrap\bootstrap-theme.min.css.map" />
+    <Content Include="Content\Style\Bootstrap\bootstrap.css.map" />
+    <Content Include="Content\Style\Bootstrap\bootstrap.min.css.map" />
+    <Content Include="Application_Folders\Contracts\4\Sajid\20161214135442411.pdf" />
+    <Content Include="Application_Folders\Drawings\3\15-002 Lahr Alter Stadtbahnhof Hotel\16-09-23_Masterplan.pdf" />
+    <Content Include="Application_Folders\Drawings\3\15-002 Lahr Alter Stadtbahnhof Hotel\16-09-23_Planstand.pdf" />
+    <Content Include="Application_Folders\Drawings\3\15-012 Gernsbach Gleisle Areal\16-10-01-Planstand .pdf" />
+    <Content Include="Application_Folders\Drawings\3\15-015 Leipzig Am Elsterwehr\Plansatz_28-10-16.pdf" />
+    <Content Include="Application_Folders\Drawings\4\Sajid\Sec-9, Bk-11, Coombs - 10 Aug 16.pdf" />
+    <Content Include="Application_Folders\IAC_Media\1\Four Seasons\1_1_1_1_20_Certification_Four Seasons.pdf" />
+    <Content Include="Application_Folders\IAC_Media\1\Four Seasons\1_1_1_1_21_Inspection_Four Seasons.pdf" />
+    <Content Include="Application_Folders\IAC_Media\1\Four Seasons\1_2_11_1_20_Certification_Four Seasons.pdf" />
+    <Content Include="Application_Folders\IAC_Media\1\Four Seasons\1_4_16_1_21_Inspection_Four Seasons.pdf" />
+    <Content Include="Application_Folders\IAC_Media\1\Four Seasons\1_4_18_1_21_Inspection_Four Seasons.pdf" />
+    <Content Include="Application_Folders\IAC_Media\1\Four Seasons\1_4_20_1_20_Certification_Four Seasons.pdf" />
+    <Content Include="Application_Folders\IAC_Media\1\Four Seasons\1_4_21_1_20_Certification_Four Seasons.pdf" />
+    <Content Include="Application_Folders\IAC_Media\1\Four Seasons\1_5_24_1_20_Certification_Four Seasons.pdf" />
+    <Content Include="Application_Folders\IAC_Media\1\Four Seasons\1_5_24_1_21_Inspection_Four Seasons.pdf" />
+    <Content Include="Application_Folders\IAC_Media\1\Four Seasons\1_6_26_1_20_Certification_Four Seasons.pdf" />
+    <Content Include="Application_Folders\IAC_Media\1\Four Seasons\1_6_26_1_21_Inspection_Four Seasons.pdf" />
+    <Content Include="Application_Folders\Invoices\1\Four Seasons\0d1dbc54-ac37-41db-ae63-75eec323925b.pdf" />
+    <Content Include="Application_Folders\Invoices\1\Four Seasons\3e1033b7-5236-4336-9b92-785813a4402c.pdf" />
+    <Content Include="Application_Folders\Invoices\4\Sajid\Sec-9, Bk-11, Coombs - 10 Aug 16.pdf" />
+    <None Include="Scripts\jquery-3.2.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.2.1.js" />
+    <Content Include="Scripts\jquery-3.2.1.min.js" />
+    <Content Include="Scripts\jquery-3.2.1.slim.js" />
+    <Content Include="Scripts\jquery-3.2.1.slim.min.js" />
+    <Content Include="Scripts\jquery.floatThead.js" />
+    <Content Include="Scripts\Licenseregistration.js" />
+    <Content Include="Scripts\moment.js" />
+    <Content Include="Scripts\notie.js" />
+    <Content Include="Scripts\notify.js" />
+    <Content Include="Scripts\pace.min.js" />
+    <Content Include="Scripts\prettify.js" />
+    <Content Include="Scripts\PreviousDailyLog.js" />
+    <Content Include="Scripts\quicksearch.js" />
+    <Content Include="Scripts\RoadMap.js" />
+    <Content Include="Scripts\select2.js" />
+    <Content Include="Scripts\select2.min.js" />
+    <Content Include="ShowFile.aspx" />
+    <Content Include="SMSAndEmailParameters.aspx" />
+    <Content Include="Standards.aspx" />
+    <Content Include="Supplier.aspx" />
+    <Content Include="SystemAccessManagement.aspx" />
+    <Content Include="Test.aspx" />
+    <Content Include="UploadInvoice.aspx" />
+    <Content Include="UploadOfficeTitle.aspx" />
+    <Content Include="UploadSubCategories.aspx" />
+    <Content Include="User_Control\UpdatePanelProgress.ascx" />
+    <Content Include="user_images\b_profile_images\1031_2_fininst.png" />
+    <Content Include="user_images\b_profile_images\10_3_cntrcr.png" />
+    <Content Include="user_images\b_profile_images\10_3_supp.jpg" />
+    <Content Include="user_images\b_profile_images\1131_2_fininst.png" />
+    <Content Include="user_images\b_profile_images\11_3_cntrcr.png" />
+    <Content Include="user_images\b_profile_images\11_3_supp.png" />
+    <Content Include="user_images\b_profile_images\121_2_bldr.png" />
+    <Content Include="user_images\b_profile_images\123_24_bldr.jpg" />
+    <Content Include="user_images\b_profile_images\125_26_bldr.gif" />
+    <Content Include="user_images\b_profile_images\12_3_cntrcr.png" />
+    <Content Include="user_images\b_profile_images\131_2_fininst.jpg" />
+    <Content Include="user_images\b_profile_images\133_24_fininst.jpg" />
+    <Content Include="user_images\b_profile_images\135_26_fininst.jpg" />
+    <Content Include="user_images\b_profile_images\13_3_cntrcr.png" />
+    <Content Include="user_images\b_profile_images\143_24_devp.png" />
+    <Content Include="user_images\b_profile_images\14_3_cntrcr.png" />
+    <Content Include="user_images\b_profile_images\15_3_cntrcr.png" />
+    <Content Include="user_images\b_profile_images\16_3_cntrcr.jpg" />
+    <Content Include="user_images\b_profile_images\171_2_pcertfr.png" />
+    <Content Include="user_images\b_profile_images\17_3_cntrcr.png" />
+    <Content Include="user_images\b_profile_images\18_3_cntrcr.png" />
+    <Content Include="user_images\b_profile_images\19_7_cntrcr.png" />
+    <Content Include="user_images\b_profile_images\1_3_bldinsp.gif" />
+    <Content Include="user_images\b_profile_images\1_3_bldr.jpg" />
+    <Content Include="user_images\b_profile_images\1_3_cntrcr.jpg" />
+    <Content Include="user_images\b_profile_images\1_3_conclt.png" />
+    <Content Include="user_images\b_profile_images\1_3_devp.gif" />
+    <Content Include="user_images\b_profile_images\1_3_fininst.gif" />
+    <Content Include="user_images\b_profile_images\1_3_pcertfr.jpg" />
+    <Content Include="user_images\b_profile_images\1_3_supp.jpg" />
+    <Content Include="user_images\b_profile_images\2051_2_cntrcr.png" />
+    <Content Include="user_images\b_profile_images\2103_24_bldo.png" />
+    <Content Include="user_images\b_profile_images\21_7_cntrcr.png" />
+    <Content Include="user_images\b_profile_images\22_7_cntrcr.png" />
+    <Content Include="user_images\b_profile_images\231_2_fininst.jpeg" />
+    <Content Include="user_images\b_profile_images\23_7_cntrcr.png" />
+    <Content Include="user_images\b_profile_images\25_7_cntrcr.jpg" />
+    <Content Include="user_images\b_profile_images\26_7_cntrcr.png" />
+    <Content Include="user_images\b_profile_images\2_3_bldinsp.png" />
+    <Content Include="user_images\b_profile_images\2_3_bldo.jpg" />
+    <Content Include="user_images\b_profile_images\2_3_bldr.gif" />
+    <Content Include="user_images\b_profile_images\2_3_cntrcr.png" />
+    <Content Include="user_images\b_profile_images\2_3_conclt.jpg" />
+    <Content Include="user_images\b_profile_images\2_3_devp.jpg" />
+    <Content Include="user_images\b_profile_images\2_3_fininst.gif" />
+    <Content Include="user_images\b_profile_images\2_3_pcertfr.jpg" />
+    <Content Include="user_images\b_profile_images\2_3_supp.jpg" />
+    <Content Include="user_images\b_profile_images\331_2_fininst.jpg" />
+    <Content Include="user_images\b_profile_images\3_3_bldinsp.gif" />
+    <Content Include="user_images\b_profile_images\3_3_bldr.gif" />
+    <Content Include="user_images\b_profile_images\3_3_cntrcr.png" />
+    <Content Include="user_images\b_profile_images\3_3_conclt.jpg" />
+    <Content Include="user_images\b_profile_images\3_3_fininst.gif" />
+    <Content Include="user_images\b_profile_images\3_3_supp.png" />
+    <Content Include="user_images\b_profile_images\4_3_bldr.jpg" />
+    <Content Include="user_images\b_profile_images\4_3_cntrcr.png" />
+    <Content Include="user_images\b_profile_images\4_3_conclt.png" />
+    <Content Include="user_images\b_profile_images\4_3_supp.jpg" />
+    <Content Include="user_images\b_profile_images\5_3_cntrcr.jpg" />
+    <Content Include="user_images\b_profile_images\5_3_conclt.png" />
+    <Content Include="user_images\b_profile_images\5_3_supp.gif" />
+    <Content Include="user_images\b_profile_images\6_3_cntrcr.jpg" />
+    <Content Include="user_images\b_profile_images\6_3_conclt.jpg" />
+    <Content Include="user_images\b_profile_images\6_3_supp.png" />
+    <Content Include="user_images\b_profile_images\7_3_cntrcr.png" />
+    <Content Include="user_images\b_profile_images\7_3_conclt.png" />
+    <Content Include="user_images\b_profile_images\7_3_supp.png" />
+    <Content Include="user_images\b_profile_images\8_3_cntrcr.jpg" />
+    <Content Include="user_images\b_profile_images\8_3_supp.png" />
+    <Content Include="user_images\b_profile_images\931_2_fininst.png" />
+    <Content Include="user_images\b_profile_images\9_3_cntrcr.gif" />
+    <Content Include="user_images\b_profile_images\9_3_supp.jpg" />
+    <Content Include="user_images\dailyConcerns\1002_3_3_1.jpg" />
+    <Content Include="user_images\dailyConcerns\1002_3_3_2.jpg" />
+    <Content Include="user_images\dailyConcerns\1003_3_3_1.jpg" />
+    <Content Include="user_images\dailyConcerns\1004_2_1_1.jpg" />
+    <Content Include="user_images\dailyConcerns\1004_2_1_2.jpg" />
+    <Content Include="user_images\dailyConcerns\1004_2_1_3.jpg" />
+    <Content Include="user_images\dailyConcerns\1005_13_1_1.jpg" />
+    <Content Include="user_images\dailyConcerns\1005_13_1_2.jpg" />
+    <Content Include="user_images\dailyConcerns\1_3_3_1.jpg" />
+    <Content Include="user_images\dailyConcerns\1_3_3_2.jpg" />
+    <Content Include="user_images\dailyConcerns\2003_3_3_1.jpg" />
+    <Content Include="user_images\dailyConcerns\2004_3_3_1.jpg" />
+    <Content Include="user_images\dailyConcerns\2_13_1_1.jpg" />
+    <Content Include="user_images\dailyConcerns\2_3_3_1.jpg" />
+    <Content Include="user_images\dailyConcerns\2_3_3_2.jpg" />
+    <Content Include="user_images\dailyConcerns\3_3_3_1.jpg" />
+    <Content Include="user_images\dailyConcerns\3_9_1_1.jpg" />
+    <Content Include="user_images\dailyConcerns\4_2_1_1.png" />
+    <Content Include="user_images\dailyConcerns\5_2_1_1.png" />
+    <Content Include="user_images\dailyConcerns\5_2_1_2.jpg" />
+    <Content Include="user_images\dailyConcerns\5_2_1_3.jpg" />
+    <Content Include="user_images\dailyConcerns\6_2_1_1.png" />
+    <Content Include="user_images\dailyLog\1_3_3_1.jpg" />
+    <Content Include="user_images\dailyLog\1_3_3_2.jpg" />
+    <Content Include="user_images\dailyLog\2005_3_3_1.jpg" />
+    <Content Include="user_images\dailyLog\2006_3_3_1.jpg" />
+    <Content Include="user_images\dailyLog\2007_3_3_1.jpg" />
+    <Content Include="user_images\dailyLog\2_3_3_1.jpg" />
+    <Content Include="user_images\dailyLog\3006_3_3_1.jpg" />
+    <Content Include="user_images\dailyLog\3007_3_3_1.jpg" />
+    <Content Include="user_images\dailyLog\3_3_3_1.jpg" />
+    <Content Include="user_images\dailyLog\4_3_3_1.jpg" />
+    <Content Include="user_images\dailyLog\6_3_3_1.jpg" />
+    <Content Include="user_images\dailyLog\72_13_1_1.png" />
+    <Content Include="user_images\dailyLog\72_13_1_2.png" />
+    <Content Include="user_images\dailyLog\72_13_1_3.png" />
+    <Content Include="user_images\dailyLog\8_3_3_1.jpg" />
+    <Content Include="user_images\projectPictures\12_24_3_1.jpg" />
+    <Content Include="user_images\projectPictures\12_24_3_2.jpg" />
+    <Content Include="user_images\projectPictures\17_2_1_1.jpg" />
+    <Content Include="user_images\projectPictures\17_2_1_2.jpg" />
+    <Content Include="user_images\projectPictures\17_2_1_3.jpg" />
+    <Content Include="user_images\projectPictures\1_2_1_1.jpg" />
+    <Content Include="user_images\projectPictures\1_2_1_2.jpg" />
+    <Content Include="user_images\projectPictures\1_2_1_3.jpg" />
+    <Content Include="user_images\projectPictures\1_3_3_1.jpg" />
+    <Content Include="user_images\projectPictures\1_3_3_2.jpg" />
+    <Content Include="user_images\projectPictures\1_3_3_3.jpg" />
+    <Content Include="user_images\projectPictures\2_24_3_1.jpg" />
+    <Content Include="user_images\projectPictures\2_24_3_2.jpg" />
+    <Content Include="user_images\projectPictures\2_24_3_3.jpg" />
+    <Content Include="user_images\projectPictures\2_3_3_1.jpg" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccountActivation.aspx.cs">
+      <DependentUpon>AccountActivation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AccountActivation.aspx.designer.cs">
+      <DependentUpon>AccountActivation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ActivitiesByPhases.aspx.cs">
+      <DependentUpon>ActivitiesByPhases.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ActivitiesByPhases.aspx.designer.cs">
+      <DependentUpon>ActivitiesByPhases.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\BasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_Code\Snippets.cs" />
+    <Compile Include="Attachments.aspx.cs">
+      <DependentUpon>Attachments.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Attachments.aspx.designer.cs">
+      <DependentUpon>Attachments.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BillingStages.aspx.cs">
+      <DependentUpon>BillingStages.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BillingStages.aspx.designer.cs">
+      <DependentUpon>BillingStages.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BSDMaster.Master.cs">
+      <DependentUpon>BSDMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BSDMaster.Master.designer.cs">
+      <DependentUpon>BSDMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Builder.aspx.cs">
+      <DependentUpon>Builder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Builder.aspx.designer.cs">
+      <DependentUpon>Builder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BuildingInspector.aspx.cs">
+      <DependentUpon>BuildingInspector.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BuildingInspector.aspx.designer.cs">
+      <DependentUpon>BuildingInspector.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BuildingOwner.aspx.cs">
+      <DependentUpon>BuildingOwner.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BuildingOwner.aspx.designer.cs">
+      <DependentUpon>BuildingOwner.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BuildingSurveyor.aspx.cs">
+      <DependentUpon>BuildingSurveyor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BuildingSurveyor.aspx.designer.cs">
+      <DependentUpon>BuildingSurveyor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessSubCategories.aspx.cs">
+      <DependentUpon>BusinessSubCategories.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BusinessSubCategories.aspx.designer.cs">
+      <DependentUpon>BusinessSubCategories.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConstructionCategory.aspx.cs">
+      <DependentUpon>ConstructionCategory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConstructionCategory.aspx.designer.cs">
+      <DependentUpon>ConstructionCategory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConstructionManPower.aspx.cs">
+      <DependentUpon>ConstructionManPower.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConstructionManPower.aspx.designer.cs">
+      <DependentUpon>ConstructionManPower.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConstructionPhases.aspx.cs">
+      <DependentUpon>ConstructionPhases.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConstructionPhases.aspx.designer.cs">
+      <DependentUpon>ConstructionPhases.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Consultant.aspx.cs">
+      <DependentUpon>Consultant.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Consultant.aspx.designer.cs">
+      <DependentUpon>Consultant.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contractor.aspx.cs">
+      <DependentUpon>Contractor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contractor.aspx.designer.cs">
+      <DependentUpon>Contractor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DailyLog.aspx.cs">
+      <DependentUpon>DailyLog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DailyLog.aspx.designer.cs">
+      <DependentUpon>DailyLog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DaySiteActivities.aspx.cs">
+      <DependentUpon>DaySiteActivities.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DaySiteActivities.aspx.designer.cs">
+      <DependentUpon>DaySiteActivities.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Developer.aspx.cs">
+      <DependentUpon>Developer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Developer.aspx.designer.cs">
+      <DependentUpon>Developer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FinancialInstitution.aspx.cs">
+      <DependentUpon>FinancialInstitution.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FinancialInstitution.aspx.designer.cs">
+      <DependentUpon>FinancialInstitution.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ForgotYourPassword.aspx.cs">
+      <DependentUpon>ForgotYourPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForgotYourPassword.aspx.designer.cs">
+      <DependentUpon>ForgotYourPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="GSTRate.aspx.cs">
+      <DependentUpon>GSTRate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GSTRate.aspx.designer.cs">
+      <DependentUpon>GSTRate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HandoverWalkThrough.aspx.cs">
+      <DependentUpon>HandoverWalkThrough.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HandoverWalkThrough.aspx.designer.cs">
+      <DependentUpon>HandoverWalkThrough.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InspectionAndCertification.aspx.cs">
+      <DependentUpon>InspectionAndCertification.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InspectionAndCertification.aspx.designer.cs">
+      <DependentUpon>InspectionAndCertification.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KeepSessionAlive.aspx.cs">
+      <DependentUpon>KeepSessionAlive.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KeepSessionAlive.aspx.designer.cs">
+      <DependentUpon>KeepSessionAlive.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LangInsertion.aspx.cs">
+      <DependentUpon>LangInsertion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LangInsertion.aspx.designer.cs">
+      <DependentUpon>LangInsertion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LicenseeProfile.aspx.cs">
+      <DependentUpon>LicenseeProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LicenseeProfile.aspx.designer.cs">
+      <DependentUpon>LicenseeProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LicenseRegistration.aspx.cs">
+      <DependentUpon>LicenseRegistration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LicenseRegistration.aspx.designer.cs">
+      <DependentUpon>LicenseRegistration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LicensingCompletion.aspx.cs">
+      <DependentUpon>LicensingCompletion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LicensingCompletion.aspx.designer.cs">
+      <DependentUpon>LicensingCompletion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NotAllowed.aspx.cs">
+      <DependentUpon>NotAllowed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NotAllowed.aspx.designer.cs">
+      <DependentUpon>NotAllowed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OfficeTitles.aspx.cs">
+      <DependentUpon>OfficeTitles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OfficeTitles.aspx.designer.cs">
+      <DependentUpon>OfficeTitles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PreviousDailyLog.aspx.cs">
+      <DependentUpon>PreviousDailyLog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PreviousDailyLog.aspx.designer.cs">
+      <DependentUpon>PreviousDailyLog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PrivateCertifier.aspx.cs">
+      <DependentUpon>PrivateCertifier.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrivateCertifier.aspx.designer.cs">
+      <DependentUpon>PrivateCertifier.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProcessCompletion.aspx.cs">
+      <DependentUpon>ProcessCompletion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProcessCompletion.aspx.designer.cs">
+      <DependentUpon>ProcessCompletion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectByLocation.aspx.cs">
+      <DependentUpon>ProjectByLocation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProjectByLocation.aspx.designer.cs">
+      <DependentUpon>ProjectByLocation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectDetail.aspx.cs">
+      <DependentUpon>ProjectDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProjectDetail.aspx.designer.cs">
+      <DependentUpon>ProjectDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectHeader.aspx.cs">
+      <DependentUpon>ProjectHeader.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProjectHeader.aspx.designer.cs">
+      <DependentUpon>ProjectHeader.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectProgressAndContractorInvoice.aspx.cs">
+      <DependentUpon>ProjectProgressAndContractorInvoice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProjectProgressAndContractorInvoice.aspx.designer.cs">
+      <DependentUpon>ProjectProgressAndContractorInvoice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuantitySurveyor.aspx.cs">
+      <DependentUpon>QuantitySurveyor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QuantitySurveyor.aspx.designer.cs">
+      <DependentUpon>QuantitySurveyor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report.aspx.cs">
+      <DependentUpon>Report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report.aspx.designer.cs">
+      <DependentUpon>Report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RoadMap.aspx.cs">
+      <DependentUpon>RoadMap.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RoadMap.aspx.designer.cs">
+      <DependentUpon>RoadMap.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ShowFile.aspx.cs">
+      <DependentUpon>ShowFile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShowFile.aspx.designer.cs">
+      <DependentUpon>ShowFile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SMSAndEmailParameters.aspx.cs">
+      <DependentUpon>SMSAndEmailParameters.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SMSAndEmailParameters.aspx.designer.cs">
+      <DependentUpon>SMSAndEmailParameters.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Standards.aspx.cs">
+      <DependentUpon>Standards.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Standards.aspx.designer.cs">
+      <DependentUpon>Standards.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Supplier.aspx.cs">
+      <DependentUpon>Supplier.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Supplier.aspx.designer.cs">
+      <DependentUpon>Supplier.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SystemAccessManagement.aspx.cs">
+      <DependentUpon>SystemAccessManagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SystemAccessManagement.aspx.designer.cs">
+      <DependentUpon>SystemAccessManagement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Test.aspx.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Test.aspx.designer.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UploadInvoice.aspx.cs">
+      <DependentUpon>UploadInvoice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UploadInvoice.aspx.designer.cs">
+      <DependentUpon>UploadInvoice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UploadOfficeTitle.aspx.cs">
+      <DependentUpon>UploadOfficeTitle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UploadOfficeTitle.aspx.designer.cs">
+      <DependentUpon>UploadOfficeTitle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UploadSubCategories.aspx.cs">
+      <DependentUpon>UploadSubCategories.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UploadSubCategories.aspx.designer.cs">
+      <DependentUpon>UploadSubCategories.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User_Control\UpdatePanelProgress.ascx.cs">
+      <DependentUpon>UpdatePanelProgress.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User_Control\UpdatePanelProgress.ascx.designer.cs">
+      <DependentUpon>UpdatePanelProgress.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WHSCheckList.aspx.cs">
+      <DependentUpon>WHSCheckList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WHSCheckList.aspx.designer.cs">
+      <DependentUpon>WHSCheckList.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Application_Folders\Contracts\1\Bahria\" />
+    <Folder Include="Application_Folders\Contracts\1\dummy project\" />
+    <Folder Include="Application_Folders\Contracts\1\Four Seasons\" />
+    <Folder Include="Application_Folders\Contracts\2\" />
+    <Folder Include="Application_Folders\Contracts\3\15-002 Lahr Alter Stadtbahnhof Hotel\" />
+    <Folder Include="Application_Folders\Contracts\3\15-003 Lahr Industriehof Kompaniekaserne\" />
+    <Folder Include="Application_Folders\Contracts\3\15-004 Elgersweier Offenburgerstraße\" />
+    <Folder Include="Application_Folders\Contracts\3\15-006 Lahr Cityloft Lotzbeckhof BA4\" />
+    <Folder Include="Application_Folders\Contracts\3\15-007 Lahr Heiligenstraße SDJ_2x6 MFH\" />
+    <Folder Include="Application_Folders\Contracts\3\15-008 Lahr Heiligenstraße SDJ 2x6, 1x12, 1x15 MFH\" />
+    <Folder Include="Application_Folders\Contracts\3\15-009 Lahr Hohbergsee\" />
+    <Folder Include="Application_Folders\Contracts\3\15-010 Inzlingen Riehenstraße\" />
+    <Folder Include="Application_Folders\Contracts\3\15-011 Mahlberg Sportplatzstraße 9\" />
+    <Folder Include="Application_Folders\Contracts\3\15-012 Gernsbach Gleisle Areal\" />
+    <Folder Include="Application_Folders\Contracts\3\15-015 Leipzig Am Elsterwehr\" />
+    <Folder Include="Application_Folders\Contracts\3\16-001 Umbau Versandgebäude Kehl\" />
+    <Folder Include="Application_Folders\Contracts\3\16-002 Neubau Seniorenwohnen Rheinhausen\" />
+    <Folder Include="Application_Folders\Contracts\5\" />
+    <Folder Include="Application_Folders\Drawings\1\Bahria\" />
+    <Folder Include="Application_Folders\Drawings\1\dummy project\" />
+    <Folder Include="Application_Folders\Drawings\1\Four Seasons\" />
+    <Folder Include="Application_Folders\Drawings\2\" />
+    <Folder Include="Application_Folders\Drawings\3\15-003 Lahr Industriehof Kompaniekaserne\" />
+    <Folder Include="Application_Folders\Drawings\3\15-004 Elgersweier Offenburgerstraße\" />
+    <Folder Include="Application_Folders\Drawings\3\15-006 Lahr Cityloft Lotzbeckhof BA4\" />
+    <Folder Include="Application_Folders\Drawings\3\15-007 Lahr Heiligenstraße SDJ_2x6 MFH\" />
+    <Folder Include="Application_Folders\Drawings\3\15-008 Lahr Heiligenstraße SDJ 2x6, 1x12, 1x15 MFH\" />
+    <Folder Include="Application_Folders\Drawings\3\15-009 Lahr Hohbergsee\" />
+    <Folder Include="Application_Folders\Drawings\3\15-010 Inzlingen Riehenstraße\" />
+    <Folder Include="Application_Folders\Drawings\3\15-011 Mahlberg Sportplatzstraße 9\" />
+    <Folder Include="Application_Folders\Drawings\3\16-001 Umbau Versandgebäude Kehl\" />
+    <Folder Include="Application_Folders\Drawings\3\16-002 Neubau Seniorenwohnen Rheinhausen\" />
+    <Folder Include="Application_Folders\Drawings\5\" />
+    <Folder Include="Application_Folders\IAC_Media\1\Bahria\" />
+    <Folder Include="Application_Folders\IAC_Media\1\dummy project\" />
+    <Folder Include="Application_Folders\IAC_Media\2\" />
+    <Folder Include="Application_Folders\IAC_Media\3\15-002 Lahr Alter Stadtbahnhof Hotel\" />
+    <Folder Include="Application_Folders\IAC_Media\3\15-003 Lahr Industriehof Kompaniekaserne\" />
+    <Folder Include="Application_Folders\IAC_Media\3\15-004 Elgersweier Offenburgerstraße\" />
+    <Folder Include="Application_Folders\IAC_Media\3\15-006 Lahr Cityloft Lotzbeckhof BA4\" />
+    <Folder Include="Application_Folders\IAC_Media\3\15-007 Lahr Heiligenstraße SDJ_2x6 MFH\" />
+    <Folder Include="Application_Folders\IAC_Media\3\15-008 Lahr Heiligenstraße SDJ 2x6, 1x12, 1x15 MFH\" />
+    <Folder Include="Application_Folders\IAC_Media\3\15-009 Lahr Hohbergsee\" />
+    <Folder Include="Application_Folders\IAC_Media\3\15-010 Inzlingen Riehenstraße\" />
+    <Folder Include="Application_Folders\IAC_Media\3\15-011 Mahlberg Sportplatzstraße 9\" />
+    <Folder Include="Application_Folders\IAC_Media\3\15-012 Gernsbach Gleisle Areal\" />
+    <Folder Include="Application_Folders\IAC_Media\3\15-012\" />
+    <Folder Include="Application_Folders\IAC_Media\3\15-015 Leipzig Am Elsterwehr\" />
+    <Folder Include="Application_Folders\IAC_Media\3\16-001 Umbau Versandgebäude Kehl\" />
+    <Folder Include="Application_Folders\IAC_Media\3\16-002 Neubau Seniorenwohnen Rheinhausen\" />
+    <Folder Include="Application_Folders\IAC_Media\4\Sajid\" />
+    <Folder Include="Application_Folders\IAC_Media\5\" />
+    <Folder Include="Application_Folders\Invoices\1\Bahria\" />
+    <Folder Include="Application_Folders\Invoices\1\dummy project\" />
+    <Folder Include="Application_Folders\Invoices\2\" />
+    <Folder Include="Application_Folders\Invoices\3\15-002 Lahr Alter Stadtbahnhof Hotel\" />
+    <Folder Include="Application_Folders\Invoices\3\15-003 Lahr Industriehof Kompaniekaserne\" />
+    <Folder Include="Application_Folders\Invoices\3\15-004 Elgersweier Offenburgerstraße\" />
+    <Folder Include="Application_Folders\Invoices\3\15-006 Lahr Cityloft Lotzbeckhof BA4\" />
+    <Folder Include="Application_Folders\Invoices\3\15-007 Lahr Heiligenstraße SDJ_2x6 MFH\" />
+    <Folder Include="Application_Folders\Invoices\3\15-008 Lahr Heiligenstraße SDJ 2x6, 1x12, 1x15 MFH\" />
+    <Folder Include="Application_Folders\Invoices\3\15-009 Lahr Hohbergsee\" />
+    <Folder Include="Application_Folders\Invoices\3\15-010 Inzlingen Riehenstraße\" />
+    <Folder Include="Application_Folders\Invoices\3\15-011 Mahlberg Sportplatzstraße 9\" />
+    <Folder Include="Application_Folders\Invoices\3\15-012 Gernsbach Gleisle Areal\" />
+    <Folder Include="Application_Folders\Invoices\3\15-015 Leipzig Am Elsterwehr\" />
+    <Folder Include="Application_Folders\Invoices\3\16-001 Umbau Versandgebäude Kehl\" />
+    <Folder Include="Application_Folders\Invoices\3\16-002 Neubau Seniorenwohnen Rheinhausen\" />
+    <Folder Include="Application_Folders\Invoices\5\" />
+    <Folder Include="Models\" />
+    <Folder Include="Scripts\i18n\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>65348</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:65348/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.4.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.4.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<Queries>
+
+  <Login>
+    <CheckPasswordResetRequestAndGetRequestLink>
+      IF EXISTS(SELECT * from ForgotYourPassword WHERE Email = @Email) BEGIN SELECT RescueLink from ForgotYourPassword WHERE Email = @Email END
+    </CheckPasswordResetRequestAndGetRequestLink>
+
+    <GenerateNewPasswordResetLink>
+      INSERT INTO ForgotYourPassword VALUES (@Email,@GUID)
+    </GenerateNewPasswordResetLink>
+
+    <GetUserNameByUserEmail>
+      select TOP 1 user_user_name AS UserName from user_master where user_email = @Email
+    </GetUserNameByUserEmail>
+
+    <ValidateCredentials>
+      SELECT dbo.user_master.user_do_id , dbo.user_master.user_password , dbo.user_master.user_user_id , dbo.user_master.user_user_name , dbo.user_master.user_first_name , dbo.user_master.user_middle_name , dbo.user_master.user_prefix , dbo.user_master.user_lang , dbo.user_master.IsPremiumUser , dbo.user_master.IsOwnStaff, dbo.bsd_licensee_information.bs_name FROM dbo.bsd_licensee_information INNER JOIN dbo.user_master ON dbo.bsd_licensee_information.id = dbo.user_master.user_do_id WHERE user_user_name = @userName AND user_active = 1;
+    </ValidateCredentials>
+
+    <BindDropDownForOwnStaff>
+      SELECT DISTINCT TOP( 100) PERCENT dbo.d_project_p.proj_id AS ProjectID , dbo.d_project_p.proj_name AS ProjectName FROM dbo.MapGrpsToSysFunctions WITH ( NOLOCK ) INNER JOIN dbo.d_project_p ON dbo. MapGrpsToSysFunctions.ProjID = dbo.d_project_p.proj_id INNER JOIN dbo.MapSysGroupToUser ON dbo. MapGrpsToSysFunctions. Grp_Usr_ID = dbo. MapSysGroupToUser.GrpID INNER JOIN dbo.user_master ON dbo. MapSysGroupToUser. User_ID = dbo. user_master. user_user_id INNER JOIN dbo. MapGrpsToSysFunctions_ByUser ON dbo. MapGrpsToSysFunctions. Grp_Usr_ID = dbo. MapGrpsToSysFunctions_ByUser .GrpID AND dbo.user_master. user_user_id = dbo. MapGrpsToSysFunctions_ByUser .UsrID AND dbo. MapGrpsToSysFunctions. ProjID = dbo. MapGrpsToSysFunctions_ByUser .PrjID AND dbo. MapGrpsToSysFunctions. Do_ID = dbo. MapGrpsToSysFunctions_ByUser .DoID WHERE dbo.MapGrpsToSysFunctions.Do_ID = @doID AND dbo.d_project_p.proj_isactive = 1 AND dbo.d_project_p.proj_dell IS NULL AND dbo.MapSysGroupToUser.Is_Dell IS NULL AND dbo.MapSysGroupToUser.User_ID = @userID AND dbo.user_master.user_active = 1 AND dbo.user_master.user_user_id = @userID AND MapGrpsToSysFunctions_ByUser.doid = @doID AND MapGrpsToSysFunctions_ByUser.isdell IS NULL ORDER BY 2;
+    </BindDropDownForOwnStaff>
+
+    <BindDataOwnerDropDown>
+      SELECT DISTINCT dbo.bsd_licensee_information.id AS DataOwnerID, dbo.bsd_licensee_information.bs_name AS DataOwnerBusinessName FROM dbo.bsd_licensee_information WITH(NOLOCK) INNER JOIN dbo.Mult_DoID_For_User ON dbo.bsd_licensee_information.id = dbo.Mult_DoID_For_User.DoID INNER JOIN dbo.user_master ON dbo.user_master.user_do_id = dbo.bsd_licensee_information.id INNER JOIN dbo.MapSysGroupToUser ON dbo.Mult_DoID_For_User.UserID = dbo.MapSysGroupToUser.User_ID AND dbo.Mult_DoID_For_User.DoID = dbo.MapSysGroupToUser.Do_ID INNER JOIN dbo.MapGrpsToSysFunctions ON dbo.MapSysGroupToUser.GrpID = dbo.MapGrpsToSysFunctions.Grp_Usr_ID AND dbo.MapSysGroupToUser.Do_ID = dbo.MapGrpsToSysFunctions.Do_ID INNER JOIN dbo.MapGrpsToSysFunctions_ByUser ON dbo.MapGrpsToSysFunctions.ProjID = dbo.MapGrpsToSysFunctions_ByUser.PrjID AND dbo.MapGrpsToSysFunctions.Do_ID = dbo.MapGrpsToSysFunctions_ByUser.DoID AND dbo.MapGrpsToSysFunctions.Grp_Usr_ID = dbo.MapGrpsToSysFunctions_ByUser.GrpID AND dbo.user_master.user_user_id = dbo.MapGrpsToSysFunctions_ByUser.UsrID WHERE (dbo.user_master.user_active = 1) AND (dbo.Mult_DoID_For_User.UserID = @userID) AND (dbo.Mult_DoID_For_User.IsActive = 1) AND (dbo.Mult_DoID_For_User.IsDel IS NULL) AND (dbo.user_master.IsPremiumUser = 0) AND (dbo.MapSysGroupToUser.User_ID = @userID) AND MapGrpsToSysFunctions_ByUser.isdell is null ORDER BY DataOwnerBusinessName
+    </BindDataOwnerDropDown>
+
+    <GenerateProjectsOfDataOwner>
+      SELECT DISTINCT dbo.d_project_p.proj_id AS ProjectID, dbo.d_project_p.proj_name AS ProjectName FROM dbo.MapGrpsToSysFunctions WITH(NOLOCK) INNER JOIN dbo.MapSysGroupToUser ON dbo.MapGrpsToSysFunctions.Grp_Usr_ID = dbo.MapSysGroupToUser.GrpID INNER JOIN dbo.d_project_p ON dbo.MapGrpsToSysFunctions.ProjID = dbo.d_project_p.proj_id INNER JOIN dbo.Mult_DoID_For_User ON dbo.MapSysGroupToUser.User_ID = dbo.Mult_DoID_For_User.UserID INNER JOIN dbo.MapGrpsToSysFunctions_ByUser ON dbo.MapGrpsToSysFunctions.ProjID = dbo.MapGrpsToSysFunctions_ByUser.PrjID AND dbo.MapGrpsToSysFunctions.Do_ID = dbo.MapGrpsToSysFunctions_ByUser.DoID AND dbo.MapGrpsToSysFunctions.Grp_Usr_ID = dbo.MapGrpsToSysFunctions_ByUser.GrpID WHERE MapGrpsToSysFunctions.Do_ID = @doID AND d_project_p.proj_isactive = 1 AND MapSysGroupToUser.User_ID = @userID and Mult_DoID_For_User.IsActive = 1 and Mult_DoID_For_User.IsDel is null order BY 2
+    </GenerateProjectsOfDataOwner>
+  </Login>
+
+  <BusinessSubCategories>
+
+    <BindConstructionCategory>
+      sp_show_bsnsCateg
+    </BindConstructionCategory>
+
+    <CheckIfBusinessCodeExistOnThisCategory>
+      SELECT [code] FROM [sd_m_buss_sub_category] WHERE [do_id] = @doID AND is_del IS NULL AND is_active = 1 AND categID = @categ AND code = @code
+    </CheckIfBusinessCodeExistOnThisCategory>
+
+    <CheckIfBusinessDescriptionExistOnThisCategory>
+      SELECT [descr] FROM [sd_m_buss_sub_category] WHERE [do_id] = @doID AND is_del IS NULL AND is_active = 1 AND categID = @categ AND descr = @descr
+    </CheckIfBusinessDescriptionExistOnThisCategory>
+
+    <UpdateBusinessSubCategories>
+      UPDATE [sd_m_buss_sub_category] SET [buss_categ] = @categText, [code] = @code , [descr] = @descr , [abbr] = @abbr , categID = @categ  WHERE [seq] = @seq
+    </UpdateBusinessSubCategories>
+
+    <CheckIfBusinessCodeOrDescExistBeforeSubmit>
+      select  buss_categ from [sd_m_buss_sub_category] where (categID = @categID AND (code = @code or descr = @descr)) AND do_id = @doID AND is_del Is null 
+    </CheckIfBusinessCodeOrDescExistBeforeSubmit>
+
+    <InsertNewSubCategory>
+      sproc_INSERT_sd_m_buss_sub_category
+    </InsertNewSubCategory>
+
+    <BindGridViewForSubCategories>
+      SELECT [seq], [buss_categ], [code], [descr], [abbr],do_id,lang,ISLICENSEE FROM [sd_m_buss_sub_category] WHERE [do_id] = @doID AND [is_del] IS NULL AND [is_active] = 1 AND( @search is null or [buss_categ] LIKE '%'+@search+'%' OR @search is null or [code] LIKE '%'+@search+'%' OR @search is null or [descr] LIKE '%'+@search+'%' OR @search is null or [abbr] LIKE '%'+@search+'%') ORDER BY buss_categ ASC,seq ASC
+    </BindGridViewForSubCategories>
+  
+  </BusinessSubCategories>
+
+</Queries>

@@ -1,0 +1,211 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,700,800,900');
+
+
+
+
+.app-body {
+    -ms-border-radius: 4px;
+    background: white;
+    border-radius: 4px;
+    padding-bottom: 10px;
+}
+
+.app-page-heading {
+    font-family: 'Raleway', sans-serif;
+    font-size: 33px;
+    font-weight: 900 !important;
+    padding-bottom: 5px;
+    padding-left: 30px;
+    padding-top: 20px;
+    text-transform: uppercase;
+}
+
+.app-page-sub-heading {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 26px;
+    padding-bottom: 15px;
+    text-transform: uppercase;
+    color: #3c3b3b;
+    font-weight: 900;
+}
+
+.app-tab-blue.nav-tabs.nav-justified > .active > a, .app-tab-blue.nav-tabs.nav-justified > .active > a:focus, .app-tab-blue.nav-tabs.nav-justified > .active > a:hover {
+    -ms-border-radius: 0px;
+    border-bottom: none;
+    border-radius: 0px;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.app-tab-blue.nav-tabs.nav-justified > li > a {
+    -ms-border-radius: 0px;
+    background: #fcfcfc;
+    border-color: #ebebf0;
+    border-radius: 0px;
+    color: #1b5b7c;
+    font-family: 'Roboto', sans-serif;
+    line-height: 30px;
+    text-transform: uppercase;
+}
+
+.app-tab-body {
+    margin: 30px;
+}
+
+.app-data-label {
+    color: #2b2b2b;
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
+}
+
+.app-data-field {
+    -ms-box-shadow: none;
+    -webkit-box-shadow: none;
+    border-color: #b8bdc4;
+    border-color: #b8bdc4;
+    box-shadow: none;
+    font-family: Segoe UI;
+    font-size: 14px;
+    height: 38px;
+    margin-bottom: 25px;
+}
+
+    .app-data-field:focus {
+        -ms-box-shadow: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        outline: none !important;
+    }
+
+.app-blue-button {
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    height: 38px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-transform: uppercase;
+}
+
+.app-grey-button {
+    background: #fcfcfc;
+    border-color: #d2dde6;
+    color: #7b7777;
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    height: 38px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-transform: uppercase;
+}
+
+.app-transparent-blue-button {
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    height: 38px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-transform: uppercase;
+}
+
+.btn:focus, .btn:active {
+    -ms-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+[class*=blue-button]:hover, [class*=blue-button]:focus, [class*=blue-button]:active {
+    background: #7b28b7;
+    color: white;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: rgb(188, 188, 188);
+    font-weight: normal;
+}
+
+::-moz-placeholder { /* Firefox 19+ */
+    color: rgb(188, 188, 188);
+    font-weight: normal;
+}
+
+:-ms-input-placeholder { /* IE 10+ */
+    color: rgb(188, 188, 188);
+    font-weight: normal;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+    color: rgb(188, 188, 188);
+    font-weight: normal;
+}
+
+.app-buttons-container {
+    margin-top: 25px;
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+
+
+.app-gridview > caption + thead > tr:first-child > td, .app-gridview > caption + thead > tr:first-child > th, .app-gridview > colgroup + thead > tr:first-child > td, .app-gridview > colgroup + thead > tr:first-child > th, .app-gridview > thead:first-child > tr:first-child > td, .app-gridview > thead:first-child > tr:first-child > th {
+    background: #f9f9f9;
+    border-color: #dcdcdc;
+    border-top: 1px solid #dcdcdc;
+    vertical-align: middle;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+}
+
+.app-gridview > thead > tr > th {
+    border-bottom: 1px solid #dcdcdc;
+    vertical-align: bottom;
+}
+
+.app-gridview > tbody > tr > td, .app-gridview > tbody > tr > th, .app-gridview > tfoot > tr > td, .app-gridview > tfoot > tr > th, .app-gridview > thead > tr > td, .app-gridview > thead > tr > th {
+    border-color: #dcdcdc;
+    border-top: 1px solid #dcdcdc;
+    line-height: 1.42857143;
+    padding: 8px;
+    vertical-align: top;
+}
+
+.app-gridview > tbody > tr > td,
+.app-gridview > tbody > tr > th,
+.app-gridview > tfoot > tr > td,
+.app-gridview > tfoot > tr > th,
+.app-gridview > thead > tr > td,
+.app-gridview > thead > tr > th {
+    border-color: #dcdcdc;
+    border-top: 1px solid #dcdcdc;
+    color: #5c5a5a;
+    font-size: 12px;
+    line-height: 1.42857143;
+    padding: 8px;
+    vertical-align: top;
+}
+
+hr {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.app-body-content {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+table {
+    border: none;
+}
+
+    table thead tr th:last-child {
+        width: 70px;
+    }

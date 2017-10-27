@@ -1,0 +1,235 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="BSDMaster.master.cs" Inherits="BSD.BSDMaster" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:700,900|Roboto:700,900" rel="stylesheet" />
+    <link href="Content/Style/Select2/select2.css" rel="stylesheet" />
+    <link href="Content/Style/Bootstrap/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="Content/Style/Bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/Style/Master.css" rel="stylesheet" />
+    <link href="Content/font-awesome.min.css" rel="stylesheet" />
+    <link href="Content/Fixer.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="#" />
+
+    <link href="Content/Style/Indigo.css" rel="stylesheet" />
+    <link href="Content/Style/notify.css" rel="stylesheet" />
+    <link href="Content/Style/Pace2.css" rel="stylesheet" />
+    <link href="Content/Style/prettify.css" rel="stylesheet" />
+    <link href="Content/Style/purple.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+</head>
+<body>
+
+    <noscript>
+    <meta http-equiv="REFRESH" content="0; url=NoJS.html"/>
+</noscript>
+
+    <form id="form1" runat="server" autocomplete="off" enctype="multipart/form-data" defaultbutton="btnDisableEnter">
+        <asp:ScriptManager ID="AllScriptManager" ClientIDMode="Static" EnablePageMethods="True" AsyncPostBackTimeout="360000" EnableCdn="false" ScriptMode="Debug" runat="server" />
+        <div class="container-fluid">
+            <!-- Header Start -->
+            <div class="app-header">
+                <ul class="app-navigation-ul">
+                    <a href="#NotificationsModal" data-toggle="modal" role="button">
+                        <li class="no-padd-hover">
+                            <img class="app-navigation-icon" src="Content/Image/Notification.png" />
+                            <span class="app-navigation-text hidden-xs">Notifications</span>
+                        </li>
+                    </a>
+                    <a href="#ContactsModal" data-toggle="modal" role="button">
+                        <li>
+                            <img class="app-navigation-icon" src="Content/Image/Contact.png" />
+                            <span class="app-navigation-text hidden-xs">Contacts</span>
+                        </li>
+                    </a>
+                    <a href="#ContractsModal" data-toggle="modal" role="button">
+                        <li>
+                            <img class="app-navigation-icon" src="Content/Image/Contract.png" />
+                            <span class="app-navigation-text hidden-xs">Contracts</span>
+                        </li>
+                    </a>
+                    <a href="#DrawingsModal" data-toggle="modal" role="button">
+                        <li>
+                            <img class="app-navigation-icon" src="Content/Image/Drawing.png" />
+                            <span class="app-navigation-text hidden-xs">Drawings</span>
+                        </li>
+                    </a>
+                    <a href="#InvoicesModal" data-toggle="modal" role="button">
+                        <li>
+                            <img class="app-navigation-icon" src="Content/Image/Invoices.png" />
+                            <span class="app-navigation-text hidden-xs">Invoices</span>
+                        </li>
+                    </a>
+                    <li onclick="window.location = 'roadmap.aspx'" id="home">
+                        <img class="app-navigation-icon" src="Content/Image/BackToHome.png" />
+                        <span class="app-navigation-text hidden-xs">Home</span>
+                    </li>
+                    <li id="back">
+                        <img class="app-navigation-icon" src="Content/Image/Back.png" />
+                        <span class="app-navigation-text hidden-xs">Back</span>
+                    </li>
+                    <li style="float: right; margin-right: 20px;">
+                        <asp:button id="btnDisableEnter" runat="server" text="" onclientclick="return false;" Style="display: none;" />
+                        <asp:ImageButton tabindex="-1" ID="ExitBSD" runat="server" OnClick="ExitBSD_OnClick" class="app-navigation-icon" src="Content/Image/Exit.png"/>
+                        <span class="app-navigation-text hidden-xs m-t-0">Exit</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="app-licensee-info hidden-xs">
+                <span class="app-licensed-to">Licensed to</span>
+                <span class="app-licensee-name"><%= GetSession("BusinessName") %></span>
+                <span class="app-user-name"><%= GetSession("UserName") %></span>
+            </div>
+            <!-- Header End -->
+
+            <asp:ContentPlaceHolder ID="body" runat="server">
+            </asp:ContentPlaceHolder>
+
+        </div>
+
+
+        <!-- Master Page Modals -->
+
+        <div class="modal fade" id="NotificationsModal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog  modal-lg">
+                <div class="modal-content white-body">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Notifications</h4>
+                    </div>
+                    <div class="modal-body">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="ContactsModal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog  modal-lg">
+                <div class="modal-content white-body">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Contacts</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="input-group">
+                            <input type="text" class="form-control app-search" placeholder="Search" runat="server" id="SearchContactBox" />
+                            <span class="input-group-btn">
+                                <asp:Button ID="SearchCont" OnClick="SearchCont_OnClick" runat="server" class="app-btn-blue app-btn-search" Text="Search" />
+                            </span>
+                        </div>
+
+                        <br />
+                        <div class="row">
+                            <div class="col-md-12 p-l-30 p-r-30">
+                                <asp:UpdatePanel ID="ContactMasterUP" runat="server">
+                                    <ContentTemplate>
+                                        <asp:Repeater ID="ContactMaster" OnItemDataBound="ContactMaster_OnItemDataBound" runat="server">
+                                            <ItemTemplate>
+                                                <div class="row">
+                                                    <div class="app-contact-container">
+                                                        <div class="col-md-12 m-b-0">
+                                                            <div class="text-left">
+                                                                <span class="contactBusinessName"><%# DataBinder.Eval(Container, "DataItem.BusinessName") %></span>
+                                                                <span class="contactBusinessNameMini"><%# DataBinder.Eval(Container, "DataItem.BusinessSubCateg") %></span>
+                                                                <asp:HiddenField ID="ID" Value='<%# DataBinder.Eval(Container, "DataItem.contact_id") %>' runat="server" />
+                                                            </div>
+                                                            <div style="border-top: 1px solid #e8e8e8; padding-top: 10px; padding-bottom: 0px;">
+                                                                <asp:Repeater ID="ContactDetails" runat="server">
+                                                                    <HeaderTemplate>
+                                                                        <table class="table table-borderless m-b-0 table-condensed table-hover " style="table-layout: fixed;">
+                                                                    </HeaderTemplate>
+                                                                    <ItemTemplate>
+                                                                        <tr>
+                                                                            <td><%# DataBinder.Eval(Container, "DataItem.Name") %></td>
+                                                                            <td class="text-center"><%# DataBinder.Eval(Container, "DataItem.Phone") %></td>
+                                                                            <td class="text-center"><%# DataBinder.Eval(Container, "DataItem.Mobile") %></td>
+                                                                            <td class="text-right"><%# DataBinder.Eval(Container, "DataItem.Email") %></td>
+                                                                        </tr>
+                                                                    </ItemTemplate>
+                                                                    <FooterTemplate>
+                                                                        </table>
+                                                                    </FooterTemplate>
+                                                                </asp:Repeater>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </ItemTemplate>
+                                        </asp:Repeater>
+                                    </ContentTemplate>
+                                    <Triggers>
+                                        <asp:AsyncPostBackTrigger ControlID="SearchCont" />
+                                    </Triggers>
+                                </asp:UpdatePanel>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="ContractsModal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog  modal-lg">
+                <div class="modal-content white-body">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Contracts</h4>
+                    </div>
+                    <div class="modal-body">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="DrawingsModal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog  modal-lg">
+                <div class="modal-content white-body">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Drawings</h4>
+                    </div>
+                    <div class="modal-body">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="InvoicesModal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog  modal-lg">
+                <div class="modal-content white-body">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Invoices</h4>
+                    </div>
+                    <div class="modal-body">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Master Page Modals -->
+
+        <script src="Scripts/jquery-3.2.1.min.js"></script>
+        <script src="Scripts/bootstrap.min.js"></script>
+        <script src="Scripts/select2.min.js"></script>
+        <script src="Scripts/Master.js"></script>
+        <script src="Scripts/notify.js"></script>
+        <script src="Scripts/pace.min.js"></script>
+        <script src="Scripts/prettify.js"></script>
+        <script src="Scripts/icheck.min.js"></script>
+        <asp:ContentPlaceHolder ID="footer" runat="server">
+        </asp:ContentPlaceHolder>
+
+        <script>
+            function pageLoad() {
+                $('select.app-data-field').select2();
+
+                $('input').iCheck({
+                    checkboxClass: 'icheckbox_square-purple',
+                    radioClass: 'iradio_square',
+                    increaseArea: '20%' // optional
+                });
+            }
+        </script>
+    </form>
+</body>
+</html>
