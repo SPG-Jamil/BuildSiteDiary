@@ -1,0 +1,13 @@
+E:\SP - Projects (Web, Desktop, Graphics, Mobile)\Web Projects (C#)\Projects\Build Site Diary\BSD\BSD\BSD\bin\BSD.dll.config
+E:\SP - Projects (Web, Desktop, Graphics, Mobile)\Web Projects (C#)\Projects\Build Site Diary\BSD\BSD\BSD\bin\BSD.dll
+E:\SP - Projects (Web, Desktop, Graphics, Mobile)\Web Projects (C#)\Projects\Build Site Diary\BSD\BSD\BSD\bin\BSD.pdb
+E:\SP - Projects (Web, Desktop, Graphics, Mobile)\Web Projects (C#)\Projects\Build Site Diary\BSD\BSD\BSD\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\SP - Projects (Web, Desktop, Graphics, Mobile)\Web Projects (C#)\Projects\Build Site Diary\BSD\BSD\BSD\obj\Debug\BSD.csprojResolveAssemblyReference.cache
+E:\SP - Projects (Web, Desktop, Graphics, Mobile)\Web Projects (C#)\Projects\Build Site Diary\BSD\BSD\BSD\obj\Debug\BSD.dll
+E:\SP - Projects (Web, Desktop, Graphics, Mobile)\Web Projects (C#)\Projects\Build Site Diary\BSD\BSD\BSD\obj\Debug\BSD.pdb
+E:\SP - Projects (Web, Desktop, Graphics, Mobile)\Web Projects (C#)\Projects\Build Site Diary\BSD\bin\BSD.dll.config
+E:\SP - Projects (Web, Desktop, Graphics, Mobile)\Web Projects (C#)\Projects\Build Site Diary\BSD\bin\BSD.dll
+E:\SP - Projects (Web, Desktop, Graphics, Mobile)\Web Projects (C#)\Projects\Build Site Diary\BSD\bin\BSD.pdb
+E:\SP - Projects (Web, Desktop, Graphics, Mobile)\Web Projects (C#)\Projects\Build Site Diary\BSD\obj\Debug\BSD.csprojResolveAssemblyReference.cache
+E:\SP - Projects (Web, Desktop, Graphics, Mobile)\Web Projects (C#)\Projects\Build Site Diary\BSD\obj\Debug\BSD.dll
+E:\SP - Projects (Web, Desktop, Graphics, Mobile)\Web Projects (C#)\Projects\Build Site Diary\BSD\obj\Debug\BSD.pdb
